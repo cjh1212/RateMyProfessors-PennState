@@ -1,0 +1,33 @@
+{
+  "name": "Rate My Professor - Penn State",
+  "version": "1.0.0",
+  "description": "See rate my professor details on lionpath",
+  "host_permissions": [
+    "https://search-production.ratemyprofessors.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "PSU.png",
+    "48": "PSU.png",
+    "128": "PSU.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.lionpath.psu.edu/psc/*"
+      ],
+      "js": [
+        "jquery-3.3.1.min.js",
+        "contentscript.js"
+      ],
+      "run at": "document_start"
+    }
+  ],
+  "action": {
+    "default_title": "Title",
+    "default_popup": "popup.html"
+  },
+  "manifest_version": 3
+}
